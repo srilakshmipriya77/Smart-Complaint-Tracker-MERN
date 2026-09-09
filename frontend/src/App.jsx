@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import DashboardLayout from './layouts/DashboardLayout';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -34,7 +34,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-
+        <Route path="/" element={<Navigate to="/login" replace />} />
         {/* Login */}
         <Route path="/login" element={<Login />} />
 
